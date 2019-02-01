@@ -2,7 +2,15 @@
 #define VL6180X_h
 
 #include <Arduino.h>
+
+#ifdef CORE_TEENSY
+// Use i2c_t3 library on Teensy
+#include <i2c_t3.h>
+typedef i2c_t3 TwoWire;
+#else
 #include <Wire.h>
+#endif
+
 
 class VL6180X
 {
