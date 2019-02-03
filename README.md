@@ -44,19 +44,14 @@ Make the following connections between the Arduino and the VL6180X board:
 
 ### Software
 
-If you are using version 1.6.2 or later of the [Arduino software (IDE)](http://www.arduino.cc/en/Main/Software), you can use the Library Manager to install this library:
+If you are using the [Arduino IDE](http://www.arduino.cc/en/Main/Software):
 
-1. In the Arduino IDE, open the "Sketch" menu, select "Include Library", then "Manage Libraries...".
-2. Search for "VL6180X".
-3. Click the VL6180X entry in the list.
-4. Click "Install".
-
-If this does not work, you can manually install the library:
-
-1. Download the [latest release archive from GitHub](https://github.com/pololu/vl6180x-arduino/releases) and decompress it.
+1. Download the [latest commit from GitHub](https://github.com/mje-nz/vl6180x-arduino/archive/master.zip) and decompress it.
 2. Rename the folder "vl6180x-arduino-master" to "VL6180X".
 3. Move the "VL6180X" folder into the "libraries" directory inside your Arduino sketchbook directory.  You can view your sketchbook location by opening the "File" menu and selecting "Preferences" in the Arduino IDE.  If there is not already a "libraries" folder in that location, you should make the folder yourself.
 4. After installing the library, restart the Arduino IDE.
+
+If you are using Platformio, just add `VL6180X=https://github.com/mje-nz/vl6180x-arduino.git` to your lib_deps.
 
 ## Examples
 
