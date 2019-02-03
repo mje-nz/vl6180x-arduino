@@ -20,9 +20,7 @@ void setup()
   Serial.begin(9600);
   Wire.begin();
 
-  sensor.init();
-  sensor.configureDefault();
-  sensor.setScaling(SCALING);
+  sensor.begin();
   sensor.setTimeout(500);
 }
 

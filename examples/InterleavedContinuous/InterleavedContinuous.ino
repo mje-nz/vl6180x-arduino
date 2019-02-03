@@ -34,8 +34,7 @@ void setup()
   Serial.begin(9600);
   Wire.begin();
 
-  sensor.init();
-  sensor.configureDefault();
+  sensor.begin();
 
   // Reduce range max convergence time and ALS integration
   // time to 30 ms and 50 ms, respectively, to allow 10 Hz
