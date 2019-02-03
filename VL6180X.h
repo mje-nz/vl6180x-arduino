@@ -5,9 +5,8 @@
 
 
 // To use the i2c_t3 library instead of Wire, uncomment this or add -DVL6180X_USE_TEENSY to your build
-//#define VL6180X_USE_TEENSY
-#ifdef VL6180X_USE_TEENSY
-// Use i2c_t3 library on Teensy
+//#define VL6180X_USE_I2C_T3
+#ifdef VL6180X_USE_I2C_T3
 #include <i2c_t3.h>
 typedef i2c_t3 TwoWire;
 #else
