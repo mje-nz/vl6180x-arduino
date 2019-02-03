@@ -6,22 +6,31 @@ cache:
 
 install:
 - pip install -U platformio
+- platformio --version
 
 env:
-- BOARD=uno
-- BOARD=leonardo
-- BOARD=micro
-- BOARD=megaatmega2560
-- BOARD=due
-- BOARD=yun
-- BOARD=genuino101
-- BOARD=zero
-- BOARD=teensy2
-- BOARD=teensylc
-- BOARD=teensy31
+  global:
+    - EXAMPLES_DIR=examples
+    - OPTIONS_T3="--project-option=lib_ldf_mode=chain+ --project-option=build_flags=-DVL6180X_USE_I2C_T3"
+  matrix:
+    # Build with i2c_t3
+    - EXAMPLES_DIR=examples_t3 OPTIONS=$OPTIONS_T3 BOARD=teensylc
+    - EXAMPLES_DIR=examples_t3 OPTIONS=$OPTIONS_T3 BOARD=teensy31
+    # Build with Wire
+    - BOARD=uno
+    - BOARD=leonardo
+    - BOARD=micro
+    - BOARD=megaatmega2560
+    - BOARD=due
+    - BOARD=yun
+    - BOARD=genuino101
+    - BOARD=zero
+    - BOARD=teensy2
+    - BOARD=teensylc
+    - BOARD=teensy31
 
 script:
 - set -eo pipefail;
-  for e in examples/*; do
-    platformio ci --board=$BOARD --lib=. $e/*;
+  for e in $EXAMPLES_DIR/*; do
+    platformio ci --board=$BOARD $OPTIONS --lib=. $e/*;
   done
