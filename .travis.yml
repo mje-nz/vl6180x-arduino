@@ -16,6 +16,9 @@ env:
 - BOARD=yun
 - BOARD=genuino101
 - BOARD=zero
+- BOARD=teensy2
+- BOARD=teensylc
+- BOARD=teensy31
 
 script:
 - set -eo pipefail;
