@@ -63,7 +63,7 @@ Several example sketches are available that show how to use the library. You can
 
 My versions:
 
-* 0.1 (2018 Feb 3): Big cleanup, use begin() instead of init() and configureDefault(), preliminary support for i2c_t3.
+* 0.1 (2019 Feb 3): Big cleanup, use begin() instead of init() and configureDefault(), preliminary support for i2c_t3.
 
 Pololu versions:
 
