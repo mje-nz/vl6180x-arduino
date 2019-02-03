@@ -53,11 +53,19 @@ If you are using the [Arduino IDE](http://www.arduino.cc/en/Main/Software):
 
 If you are using Platformio, just add `VL6180X=https://github.com/mje-nz/vl6180x-arduino.git` to your lib_deps.
 
+To use i2c_t3 instead of Wire, add `-DVL6180X_USE_I2C_T3` to your build or edit the top of `VL6180X.h`.
+
 ## Examples
 
 Several example sketches are available that show how to use the library. You can access them from the Arduino IDE by opening the "File" menu, selecting "Examples", and then selecting "VL6180X". If you cannot find these examples, the library was probably installed incorrectly and you should retry the installation instructions above.
 
 ## Version history
+
+My versions:
+
+* 0.1 (2018 Feb 3): Big cleanup, use begin() instead of init() and configureDefault(), preliminary support for i2c_t3.
+
+Pololu versions:
 
 * 1.2.0 (2016 May 18): Added functions for reading range in millimeters, taking range scaling factor into account. Changed example sketches to use these functions.
 * 1.1.0 (2016 May 12): Added functions to set range scaling factor and example sketch to demonstrate scaling.
