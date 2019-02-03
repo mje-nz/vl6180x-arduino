@@ -267,7 +267,6 @@ uint8_t VL6180X::readReg(uint16_t reg) {
 
     wire_.requestFrom(address_, (uint8_t) 1);
     value = wire_.read();
-    wire_.endTransmission();
 
     return value;
 }
@@ -283,7 +282,6 @@ uint16_t VL6180X::readReg16Bit(uint16_t reg) {
     wire_.requestFrom(address_, (uint8_t) 2);
     value = (uint16_t) wire_.read() << 8; // value high byte
     value |= wire_.read();               // value low byte
-    wire_.endTransmission();
 
     return value;
 }
@@ -301,7 +299,6 @@ uint32_t VL6180X::readReg32Bit(uint16_t reg) {
     value |= (uint32_t) wire_.read() << 16;
     value |= (uint16_t) wire_.read() << 8;
     value |= wire_.read();                 // value lowest byte
-    wire_.endTransmission();
 
     return value;
 }
